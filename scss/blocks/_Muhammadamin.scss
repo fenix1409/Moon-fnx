@@ -1,0 +1,136 @@
+.moon-hero-section {
+    padding: 76px 0 118px;
+}
+.moon__hero-subtitle {
+    @include Display($items:center, $space:start, $gap:28px);
+    @include textStyle($MB:64px, $FS:28px, $FW:400, $CLR:$white-clr, $LH:34px, $CASE:inherit);
+}
+.moon__content-wrapper{
+    width: 445px;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+.moon__hero-content {
+    @include Display($items:center, $space:start, $gap:92px);
+}
+.moon__list {
+    @include Display($items:center, $space:start, $gap:36px);
+    margin-bottom: 37px;
+}
+.moon__item{
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+        content: "";
+        width: 50%;
+        height: 3px;
+        position: absolute;
+        background-color: $white-clr;
+        left: -100%;
+        bottom: 0;
+        overflow: hidden;
+        transition: all 0.3s linear;
+    }
+    &::after{
+        content: "";
+        width: 50%;
+        height: 3px;
+        position: absolute;
+        background-color: $white-clr;
+        right: -100%;
+        bottom: 0;
+        overflow: hidden;
+        transition: all 0.3s linear;
+    }
+    &:hover::before{
+        left: 0;
+    }
+    &:hover::after{
+        right: 0;
+    }
+    &:active{
+        background-color: #191919B2;
+    }
+    &:active::before, &:active::after{
+        background-color: transparent;
+        
+    }
+}
+.moon__link {
+    @include textStyle($MB:0px, $FS:16px, $FW:400, $CLR:$text-clr, $LH:19px, $CASE:inherit);
+    padding-bottom: 12px;
+    display: flex;
+
+    &:hover{
+        color: $white-clr;
+    }
+}
+.moon__hero-title {
+    @include textStyle($MB:14px, $FS:100px, $FW:400, $CLR:$white-clr, $LH:115px, $CASE:inherit);
+}
+.moon__hero-text {
+    @include textStyle($MB:28px, $FS:18px, $FW:400, $CLR:$text-clr, $LH:32px, $CASE:inherit);
+    font-family: 'Barlow', sans-serif;
+    padding-bottom: 54px;
+    border-bottom: 1px solid #383B4B;
+}
+.moon__km-wrapper {
+    @include Display($items:center, $space:start, $gap:72px);
+}
+.description__wrapper {
+    width: 143px;
+}
+.description__information {
+    display: block;
+    @include textStyle($MB:12px, $FS:14px, $FW:400, $CLR:$text-clr, $LH:17px, $CASE:inherit);
+}
+.description__km {
+    @include textStyle($MB:0px, $FS:28px, $FW:400, $CLR:$white-clr, $LH:32px, $CASE:inherit);
+}
+
+
+// hero tablet 
+@media (max-width:915px){
+    .moon-hero-section {
+        padding: 48px 0;
+    }
+    .moon__hero-content {
+        flex-direction: column;
+    }
+    .moon__hero-img{
+        width: 300px;
+        height: 300px;
+    }
+    .moon__list {
+        @include Display($items:center, $space:start, $gap:36px);
+        margin-bottom: 32px;
+    }
+    .moon__content-wrapper{
+        width: 573px;
+        text-align: center;
+        display: ruby;
+        margin: 0 auto;
+    }
+    .moon__item{
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .description__wrapper {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .moon__hero-title {
+        @include textStyle($MB:8px, $FS:80px, $FW:400, $CLR:$white-clr, $LH:92px, $CASE:inherit);
+    }
+    .moon__hero-text {
+        @include textStyle($MB:28px, $FS:16px, $FW:400, $CLR:$text-clr, $LH:28px, $CASE:inherit);
+        font-family: 'Barlow', sans-serif;
+        padding-bottom: 49px;
+        border-bottom: 1px solid #383B4B;
+    }
+}
+// hero tablet 
+
+
+
